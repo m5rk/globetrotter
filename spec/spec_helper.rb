@@ -27,6 +27,11 @@ def taxonomy_xml_node
   parser.taxonomy_nodes_by_id.values.first.node
 end
 
+def root_taxonomy_xml_node
+  parser = Parser.new(valid_options)
+  parser.taxonomy_doc.xpath('.//taxonomy').first
+end
+
 public
 
 def silence_output
